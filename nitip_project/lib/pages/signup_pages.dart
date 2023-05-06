@@ -1,15 +1,38 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:nitip_project/components/my_textfiels.dart';
-import 'package:nitip_project/components/signup_button.dart';
-import 'package:nitip_project/components/square_tile.dart';
+import 'package:nitip_project/pages/home_page.dart';
 
-class SignupPage extends StatelessWidget {
+class SignupPage extends StatefulWidget {
   SignupPage({super.key});
 
-  // text editing controllers
-  final nameController = TextEditingController();
-  final usernameController = TextEditingController();
-  final passwordController = TextEditingController();
+  @override
+  State<SignupPage> createState() => _SignupPageState();
+}
+
+class _SignupPageState extends State<SignupPage> {
+  static Future<User?> createUsingEmailPassword(
+      {required String email,
+      required String password,
+      required BuildContext context}) async {
+    FirebaseAuth auth = FirebaseAuth.instance;
+    User? user;
+    try {
+      UserCredential userCredential = await auth.createUserWithEmailAndPassword(
+          email: email, password: password);
+      user = userCredential.user;
+    } on FirebaseAuthException catch (u) {
+      if (u.code == "user-already-signed") {
+        print("There is a user for that email");
+      }
+    }
+
+    return user;
+  }
+
+  TextEditingController emailController = TextEditingController();
+
+  TextEditingController passwordController = TextEditingController();
 
   // sign user in method
   void signUserUp() {}
@@ -38,20 +61,10 @@ class SignupPage extends StatelessWidget {
                 ),
               ),
 
-              const SizedBox(height: 15),
-
-              // username textfield
-              MyTextField(
-                controller: nameController,
-                hintText: 'Name',
-                obscureText: false,
-              ),
-
               const SizedBox(height: 10),
 
-              // password textfield
               MyTextField(
-                controller: usernameController,
+                controller: emailController,
                 hintText: 'Username',
                 obscureText: false,
               ),
@@ -69,8 +82,28 @@ class SignupPage extends StatelessWidget {
               const SizedBox(height: 15),
 
               // sign up button
-              SignUp(
-                onTap: signUserUp,
+              Container(
+                width: 350,
+                child: RawMaterialButton(
+                  fillColor: Color(0xFF141413),
+                  elevation: 0.0,
+                  padding: const EdgeInsets.symmetric(vertical: 20.0),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12.0)),
+                  onPressed: () async {
+                    User? user = await createUsingEmailPassword(
+                        email: emailController.text,
+                        password: passwordController.text,
+                        context: context);
+                    print(user);
+                    if (user != null) {
+                      Navigator.of(context).pushReplacement(
+                          MaterialPageRoute(builder: (context) => Home_Page()));
+                    }
+                  },
+                  child: const Text("Register",
+                      style: TextStyle(color: Colors.white, fontSize: 18.0)),
+                ),
               ),
 
               const SizedBox(height: 10),
@@ -101,29 +134,6 @@ class SignupPage extends StatelessWidget {
                     ),
                   ],
                 ),
-              ),
-
-              const SizedBox(height: 10),
-
-              // google + facebook + twitter sign in buttons
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  // google button
-                  SquareTile(imagePath: 'lib/images/Google.png'),
-
-                  SizedBox(width: 15),
-
-                  // twitter button
-                  SquareTile(imagePath: 'lib/images/Twitter.png'),
-
-                  SizedBox(width: 15),
-
-                  // facebook button
-                  SquareTile(imagePath: 'lib/images/Facebook.png'),
-
-                  SizedBox(width: 15)
-                ],
               ),
 
               const SizedBox(height: 10),

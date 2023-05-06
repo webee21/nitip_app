@@ -20,19 +20,19 @@ class MyApp extends StatelessWidget {
         systemNavigationBarColor: Color.fromARGB(0, 255, 255, 255)));
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: Home_Page(),
     );
   }
 }
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class Home_Page extends StatefulWidget {
+  const Home_Page({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<Home_Page> createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageState extends State<Home_Page> {
   int _index = 0;
   final screens = [
     HomePage__(),

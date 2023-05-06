@@ -1,15 +1,40 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:nitip_project/components/my_textfiels.dart';
-import 'package:nitip_project/components/signin_button.dart';
 import 'package:nitip_project/pages/signup_pages.dart';
-import 'package:nitip_project/components/square_tile.dart';
+import 'package:nitip_project/pages/home_page.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
   LoginPage({super.key});
 
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  static Future<User?> loginUsingEmailPassword(
+      {required String email,
+      required String password,
+      required BuildContext context}) async {
+    FirebaseAuth auth = FirebaseAuth.instance;
+    User? user;
+    try {
+      UserCredential userCredential = await auth.signInWithEmailAndPassword(
+          email: email, password: password);
+      user = userCredential.user;
+    } on FirebaseAuthException catch (e) {
+      if (e.code == "user-not-found") {
+        print("No User found for that email");
+      }
+    }
+
+    return user;
+  }
+
   // text editing controllers
-  final usernameController = TextEditingController();
-  final passwordController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
+
+  TextEditingController passwordController = TextEditingController();
 
   // sign user in method
   void signUserIn() {}
@@ -42,8 +67,8 @@ class LoginPage extends StatelessWidget {
 
               // username textfield
               MyTextField(
-                controller: usernameController,
-                hintText: 'Username',
+                controller: emailController,
+                hintText: 'Email',
                 obscureText: false,
               ),
 
@@ -75,8 +100,28 @@ class LoginPage extends StatelessWidget {
               const SizedBox(height: 15),
 
               // sign in button
-              SignIn(
-                onTap: signUserIn,
+              Container(
+                width: 350,
+                child: RawMaterialButton(
+                  fillColor: Color(0xFF141413),
+                  elevation: 0.0,
+                  padding: const EdgeInsets.symmetric(vertical: 20.0),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12.0)),
+                  onPressed: () async {
+                    User? user = await loginUsingEmailPassword(
+                        email: emailController.text,
+                        password: passwordController.text,
+                        context: context);
+                    print(user);
+                    if (user != null) {
+                      Navigator.of(context).pushReplacement(
+                          MaterialPageRoute(builder: (context) => Home_Page()));
+                    }
+                  },
+                  child: const Text("Login",
+                      style: TextStyle(color: Colors.white, fontSize: 18.0)),
+                ),
               ),
 
               const SizedBox(height: 10),
@@ -107,29 +152,6 @@ class LoginPage extends StatelessWidget {
                     ),
                   ],
                 ),
-              ),
-
-              const SizedBox(height: 10),
-
-              // google + facebook + twitter sign in buttons
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  // google button
-                  SquareTile(imagePath: 'lib/images/Google.png'),
-
-                  SizedBox(width: 15),
-
-                  // twitter button
-                  SquareTile(imagePath: 'lib/images/Twitter.png'),
-
-                  SizedBox(width: 15),
-
-                  // facebook button
-                  SquareTile(imagePath: 'lib/images/Facebook.png'),
-
-                  SizedBox(width: 15)
-                ],
               ),
 
               const SizedBox(height: 10),

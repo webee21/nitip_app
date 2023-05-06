@@ -37,7 +37,7 @@ class _martabaksalehState extends State<martabaksaleh> {
                     child: GestureDetector(
                         onTap: () =>
                             Navigator.of(context).push(MaterialPageRoute(
-                              builder: (BuildContext context) => HomePage(),
+                              builder: (BuildContext context) => Home_Page(),
                             )),
                         child: Container(
                           child: Icon(Icons.arrow_back),

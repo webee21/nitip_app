@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "514526179848",
+    "project_id": "auth-project-a5c24",
+    "storage_bucket": "auth-project-a5c24.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:514526179848:android:186ab97a221eae39f497bd",
+        "android_client_info": {
+          "package_name": "com.example.nitip_project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "514526179848-n9n2brhahnacdir782a7rtc30ac62jnj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_qgVA1K4hNmwkWJQbpN-T7M0sBnStZBY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "514526179848-n9n2brhahnacdir782a7rtc30ac62jnj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
