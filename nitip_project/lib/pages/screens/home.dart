@@ -9,8 +9,14 @@ import 'package:nitip_project/widget/restaurant.dart';
 import 'package:nitip_project/widget/food/curryhouse.dart';
 import 'package:nitip_project/widget/food/hosana.dart';
 import 'package:nitip_project/widget/food/pizzaduramo.dart';
-import 'package:nitip_project/widget/food/dongkeys.dart';
-import 'package:nitip_project/widget/food/steak212.dart';
+
+import 'package:nitip_project/widget/drink/chocolate.dart';
+import 'package:nitip_project/widget/drink/coffee.dart';
+import 'package:nitip_project/widget/drink/juice.dart';
+
+import 'package:nitip_project/widget/snack/bread.dart';
+import 'package:nitip_project/widget/snack/kebabsawarma.dart';
+import 'package:nitip_project/widget/snack/martabaksaleh.dart';
 
 class HomePage__ extends StatefulWidget {
   HomePage__({Key? key}) : super(key: key);
@@ -110,20 +116,6 @@ class _HomePageState extends State<HomePage__> {
                       onTap: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => dongkeys()),
-                        );
-                      },
-                      child: Restaurant(
-                        imagePath: "assets/burger.jpg",
-                        nameShop: "Dongkeys Burgers",
-                        rating: "5.0",
-                        jamBuka: "10.00 AM - 22.00 PM",
-                      ),
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                          context,
                           MaterialPageRoute(builder: (context) => curryhouse()),
                         );
                       },
@@ -156,23 +148,92 @@ class _HomePageState extends State<HomePage__> {
                         );
                       },
                       child: Restaurant(
-                          imagePath: "assets/pizza.png",
+                          imagePath: "assets/pizza_2.png",
                           nameShop: "Pizza Duramo",
-                          rating: "4.8",
-                          jamBuka: "12.00 PM - 22.00 PM"),
+                          rating: "4.9",
+                          jamBuka: "10.00 PM - 21.00 PM"),
                     ),
                     GestureDetector(
                       onTap: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => steak212()),
+                          MaterialPageRoute(builder: (context) => bread()),
                         );
                       },
                       child: Restaurant(
-                          imagePath: "assets/steak.png",
-                          nameShop: "Steak 212",
-                          rating: "4.9",
-                          jamBuka: "13.00 PM - 21.00 PM"),
+                          imagePath: "assets/roti.jpg",
+                          nameShop: "Bread Toast",
+                          rating: "4.5",
+                          jamBuka: "17.00 PM - 23.00 PM"),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => kebabsawarma()),
+                        );
+                      },
+                      child: Restaurant(
+                        imagePath: "assets/kebab_4.jpg",
+                        nameShop: "Kebab Sawarna",
+                        rating: "4.9",
+                        jamBuka: "10.00 AM - 21.00 PM",
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => martabaksaleh()),
+                        );
+                      },
+                      child: Restaurant(
+                          imagePath: "assets/martabak_2.png",
+                          nameShop: "Martabak",
+                          rating: "4.7",
+                          jamBuka: "18.00 PM - 23.00 PM"),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => chocolate()),
+                        );
+                      },
+                      child: Restaurant(
+                          imagePath: "assets/coklat.jpg",
+                          nameShop: "Chocolate House",
+                          rating: "4.8",
+                          jamBuka: "10.00 AM - 21.00 PM"),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => coffee()),
+                        );
+                      },
+                      child: Restaurant(
+                        imagePath: "assets/kopi.jpg",
+                        nameShop: "Coffee House",
+                        rating: "4.8",
+                        jamBuka: "10.00 AM - 22.00 PM",
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => juice()),
+                        );
+                      },
+                      child: Restaurant(
+                          imagePath: "assets/jus.jpg",
+                          nameShop: "Juice Drinks",
+                          rating: "4.5",
+                          jamBuka: "10.00 AM - 21.00 PM"),
                     ),
                   ],
                 ),

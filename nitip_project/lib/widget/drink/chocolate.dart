@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:nitip_project/pages/home_page.dart';
 
-class martabaksaleh extends StatefulWidget {
-  const martabaksaleh({super.key});
+class chocolate extends StatefulWidget {
+  const chocolate({super.key});
 
   @override
-  State<martabaksaleh> createState() => _martabaksalehState();
+  State<chocolate> createState() => _chocolateState();
 }
 
-class _martabaksalehState extends State<martabaksaleh> {
+class _chocolateState extends State<chocolate> {
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
@@ -29,7 +31,7 @@ class _martabaksalehState extends State<martabaksaleh> {
                   decoration: BoxDecoration(
                       image: DecorationImage(
                           fit: BoxFit.cover,
-                          image: AssetImage("assets/martabak_2.png"))),
+                          image: AssetImage("assets/coklat.jpg"))),
                 ),
                 Positioned(
                     top: 16,
@@ -51,7 +53,7 @@ class _martabaksalehState extends State<martabaksaleh> {
                   child: Padding(
                     padding: const EdgeInsets.all(10),
                     child: Text(
-                      "Martabak Saleh",
+                      "Chocolate House",
                       style: GoogleFonts.montserrat(
                           fontSize: 18, fontWeight: FontWeight.bold),
                     ),
@@ -81,7 +83,7 @@ class _martabaksalehState extends State<martabaksaleh> {
                     Icons.star,
                     color: Colors.amber,
                   ),
-                  Text("4.7 (800 review)",
+                  Text("4.8 (1025 review)",
                       style: GoogleFonts.montserrat(
                           fontSize: 12, fontWeight: FontWeight.bold)),
                   SizedBox(
@@ -91,7 +93,7 @@ class _martabaksalehState extends State<martabaksaleh> {
                     Icons.access_time,
                     color: Colors.black,
                   ),
-                  Text("18.00 PM - 23.00 PM",
+                  Text("10.00 AM - 21.00 PM",
                       style: GoogleFonts.montserrat(
                           fontSize: 12, fontWeight: FontWeight.bold)),
                   SizedBox(
@@ -110,7 +112,7 @@ class _martabaksalehState extends State<martabaksaleh> {
                   color: Colors.black,
                 ),
                 Text(
-                  "Cibinong, Bogor",
+                  "Jakarta Pusat",
                   style: GoogleFonts.montserrat(
                       fontSize: 12, fontWeight: FontWeight.bold),
                 ),
@@ -127,19 +129,19 @@ class _martabaksalehState extends State<martabaksaleh> {
                       child: Column(
                         children: [
                           Image.asset(
-                            "assets/martabak_3.png",
+                            "assets/coklat_2.jpg",
                             width: 170,
                           ),
                           SizedBox(
-                            height: 20,
+                            height: 25,
                           ),
                           Text(
-                            "Martabak Coklat Kacang",
+                            "Chocolater Floats",
                             style: GoogleFonts.montserrat(
                                 fontSize: 12, fontWeight: FontWeight.bold),
                           ),
                           Text(
-                            "Rp. 60.000",
+                            "Rp. 40.000",
                             style: GoogleFonts.montserrat(
                                 fontSize: 12, fontWeight: FontWeight.bold),
                           ),
@@ -157,19 +159,19 @@ class _martabaksalehState extends State<martabaksaleh> {
                       child: Column(
                         children: [
                           Image.asset(
-                            "assets/martabak_4.png",
+                            "assets/coklat_3.jpg",
                             width: 170,
                           ),
                           SizedBox(
-                            height: 20,
+                            height: 30,
                           ),
                           Text(
-                            "Martabak Telur Bebek",
+                            "Hot Chocolate",
                             style: GoogleFonts.montserrat(
-                                fontSize: 12, fontWeight: FontWeight.bold),
+                                fontSize: 11, fontWeight: FontWeight.bold),
                           ),
                           Text(
-                            "Rp. 60.000",
+                            "Rp. 35.000",
                             style: GoogleFonts.montserrat(
                                 fontSize: 12, fontWeight: FontWeight.bold),
                           )
@@ -185,7 +187,7 @@ class _martabaksalehState extends State<martabaksaleh> {
               child: Column(
                 children: [
                   Text(
-                    "Popular Food",
+                    "Popular Drinks",
                     style: GoogleFonts.montserrat(
                         fontSize: 18, fontWeight: FontWeight.bold),
                   ),
@@ -198,12 +200,12 @@ class _martabaksalehState extends State<martabaksaleh> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    "Martabak Manis Coklat Keju Kacang",
+                    "Chocomint",
                     style: GoogleFonts.montserrat(
                         fontSize: 15, fontWeight: FontWeight.bold),
                   ),
                   Text(
-                    "Rp. 65.000",
+                    "Rp. 40.000",
                     style: GoogleFonts.montserrat(
                         fontSize: 15, fontWeight: FontWeight.bold),
                   )
@@ -216,12 +218,12 @@ class _martabaksalehState extends State<martabaksaleh> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    "Martabak Manis Coklat Keju Wijen",
+                    "Choco Latte",
                     style: GoogleFonts.montserrat(
                         fontSize: 15, fontWeight: FontWeight.bold),
                   ),
                   Text(
-                    "Rp. 65.000",
+                    "Rp. 40.000",
                     style: GoogleFonts.montserrat(
                         fontSize: 15, fontWeight: FontWeight.bold),
                   )
@@ -234,12 +236,12 @@ class _martabaksalehState extends State<martabaksaleh> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    "Martabak Manis Coklat Pandan",
+                    "White Chocolate",
                     style: GoogleFonts.montserrat(
                         fontSize: 15, fontWeight: FontWeight.bold),
                   ),
                   Text(
-                    "Rp. 70.000",
+                    "Rp. 40.000",
                     style: GoogleFonts.montserrat(
                         fontSize: 15, fontWeight: FontWeight.bold),
                   )
@@ -252,12 +254,12 @@ class _martabaksalehState extends State<martabaksaleh> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    "Martabak Telur Ayam",
+                    "Chocolate Banana Smoothie",
                     style: GoogleFonts.montserrat(
                         fontSize: 15, fontWeight: FontWeight.bold),
                   ),
                   Text(
-                    "Rp. 60.000",
+                    "Rp. 45.000",
                     style: GoogleFonts.montserrat(
                         fontSize: 15, fontWeight: FontWeight.bold),
                   )
@@ -270,12 +272,12 @@ class _martabaksalehState extends State<martabaksaleh> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    "Martabak Telur Bebek Spesial",
+                    "Mocha Hot Chocolate",
                     style: GoogleFonts.montserrat(
                         fontSize: 15, fontWeight: FontWeight.bold),
                   ),
                   Text(
-                    "Rp. 70.000",
+                    "Rp. 40.000",
                     style: GoogleFonts.montserrat(
                         fontSize: 15, fontWeight: FontWeight.bold),
                   )
@@ -288,42 +290,12 @@ class _martabaksalehState extends State<martabaksaleh> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    "Martabak Telur Ayam Spesial",
+                    "Chocolate Milkshake",
                     style: GoogleFonts.montserrat(
                         fontSize: 15, fontWeight: FontWeight.bold),
                   ),
                   Text(
-                    "Rp. 70.000",
-                    style: GoogleFonts.montserrat(
-                        fontSize: 15, fontWeight: FontWeight.bold),
-                  )
-                ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(10),
-              child: Column(
-                children: [
-                  Text(
-                    "Drinks",
-                    style: GoogleFonts.montserrat(
-                        fontSize: 18, fontWeight: FontWeight.bold),
-                  )
-                ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(10),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    "Mineral Water",
-                    style: GoogleFonts.montserrat(
-                        fontSize: 15, fontWeight: FontWeight.bold),
-                  ),
-                  Text(
-                    "Rp. 5.000",
+                    "Rp. 40.000",
                     style: GoogleFonts.montserrat(
                         fontSize: 15, fontWeight: FontWeight.bold),
                   )
@@ -336,84 +308,12 @@ class _martabaksalehState extends State<martabaksaleh> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    "Es Jeruk",
+                    "Avocado Chocolate",
                     style: GoogleFonts.montserrat(
                         fontSize: 15, fontWeight: FontWeight.bold),
                   ),
                   Text(
-                    "Rp. 10.000",
-                    style: GoogleFonts.montserrat(
-                        fontSize: 15, fontWeight: FontWeight.bold),
-                  )
-                ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(10),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    "Es Teh Manis",
-                    style: GoogleFonts.montserrat(
-                        fontSize: 15, fontWeight: FontWeight.bold),
-                  ),
-                  Text(
-                    "Rp. 6.000",
-                    style: GoogleFonts.montserrat(
-                        fontSize: 15, fontWeight: FontWeight.bold),
-                  )
-                ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(10),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    "Es Teh Tawar",
-                    style: GoogleFonts.montserrat(
-                        fontSize: 15, fontWeight: FontWeight.bold),
-                  ),
-                  Text(
-                    "Rp. 5.000",
-                    style: GoogleFonts.montserrat(
-                        fontSize: 15, fontWeight: FontWeight.bold),
-                  )
-                ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(10),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    "Jus Mangga",
-                    style: GoogleFonts.montserrat(
-                        fontSize: 15, fontWeight: FontWeight.bold),
-                  ),
-                  Text(
-                    "Rp. 15.000",
-                    style: GoogleFonts.montserrat(
-                        fontSize: 15, fontWeight: FontWeight.bold),
-                  )
-                ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(10),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    "Jus Alpukat",
-                    style: GoogleFonts.montserrat(
-                        fontSize: 15, fontWeight: FontWeight.bold),
-                  ),
-                  Text(
-                    "Rp. 15.000",
+                    "Rp. 45.000",
                     style: GoogleFonts.montserrat(
                         fontSize: 15, fontWeight: FontWeight.bold),
                   )
