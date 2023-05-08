@@ -7,7 +7,6 @@ import 'package:nitip_project/widget/snack/kebabsawarma.dart';
 import 'package:nitip_project/widget/snack/martabaksaleh.dart';
 import 'package:nitip_project/widget/snack/cookies.dart';
 import 'package:nitip_project/widget/snack/pancake.dart';
-import 'package:nitip_project/widget/snack/tacobull.dart';
 
 class snack extends StatefulWidget {
   const snack({super.key});
@@ -218,83 +217,6 @@ class _snackState extends State<snack> {
                                   ),
                                   Text(
                                     "17.00 PM - 23.00 PM",
-                                    style: GoogleFonts.montserrat(
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => tacobull()),
-                  );
-                },
-                child: SizedBox(
-                  width: double.infinity,
-                  height: 210,
-                  child: Stack(
-                    children: [
-                      Card(
-                        clipBehavior: Clip.antiAliasWithSaveLayer,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10)),
-                        child: Column(
-                          children: [
-                            SizedBox(
-                              width: double.infinity,
-                              height: 150,
-                              child: Image.asset("assets/tacos.jpg",
-                                  fit: BoxFit.cover),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Positioned(
-                        bottom: 0,
-                        left: 10,
-                        child: SizedBox(
-                          height: 50,
-                          child: Column(
-                            children: [
-                              Text(
-                                "Tacos Bull",
-                                style: GoogleFonts.montserrat(
-                                    fontSize: 15, fontWeight: FontWeight.bold),
-                              ),
-                              SizedBox(
-                                height: 3,
-                              ),
-                              Row(
-                                children: [
-                                  Icon(Icons.star, color: Colors.amber),
-                                  SizedBox(
-                                    width: 5,
-                                  ),
-                                  Text(
-                                    "4.8",
-                                    style: GoogleFonts.montserrat(
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                  SizedBox(
-                                    width: 150,
-                                  ),
-                                  Icon(Icons.access_time, color: Colors.black),
-                                  SizedBox(
-                                    width: 5,
-                                  ),
-                                  Text(
-                                    "10.00 AM - 22.00 PM",
                                     style: GoogleFonts.montserrat(
                                         fontSize: 12,
                                         fontWeight: FontWeight.bold),

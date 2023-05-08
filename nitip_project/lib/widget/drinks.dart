@@ -266,7 +266,7 @@ class _drinksState extends State<drinks> {
                           child: Column(
                             children: [
                               Text(
-                                "Nginum",
+                                "Chocolate House",
                                 style: GoogleFonts.montserrat(
                                     fontSize: 15, fontWeight: FontWeight.bold),
                               ),

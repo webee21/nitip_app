@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:nitip_project/pages/screens/home.dart';
-import 'package:nitip_project/pages/screens/favorite.dart';
 import 'package:nitip_project/pages/screens/history.dart';
 import 'package:nitip_project/pages/screens/profile.dart';
 
@@ -36,7 +35,6 @@ class _HomePageState extends State<Home_Page> {
   int _index = 0;
   final screens = [
     HomePage__(),
-    Favorite(),
     History(),
     ProfilePage(),
   ];
@@ -51,10 +49,6 @@ class _HomePageState extends State<Home_Page> {
           GButton(
             icon: Icons.home,
             text: "Home",
-          ),
-          GButton(
-            icon: Icons.favorite,
-            text: "Favorite",
           ),
           GButton(
             icon: Icons.history,

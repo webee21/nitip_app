@@ -45,6 +45,10 @@ dependencies:
   firebase_auth: ^4.5.0
   firebase_core_platform_interface: ^4.7.0
   firebase_messaging: ^14.5.0
+  cloud_firestore: ^4.6.0
+  provider: ^6.0.5
+  equatable: ^2.0.5
+  bloc: ^8.1.1
   
 
 dev_dependencies:
